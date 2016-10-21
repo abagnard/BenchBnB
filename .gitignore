@@ -1,9 +1,3 @@
-# Ignore application configuration
-/config/application.yml
-
-# Ignore node modules
-node_modules
-
-# Ignore bundle
+node_modules/
 bundle.js
 bundle.js.map
