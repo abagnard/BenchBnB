@@ -1,7 +1,7 @@
 import SessionConstants from '../actions/session_actions';
 import { signup, login, logout } from '../util/session_api_util';
 
-export const SessoinMiddleware = ({getState, dispatch}) => next => action => {
+const SessionMiddleware = ({getState, dispatch}) => next => action => {
   const successCallback = user => dispatch(SessionConstants.RECEIVE_CURRENT_USER(user));
   const errorCallback = xhr => dispatch(SessionConstants.RECEIVE_ERRORS(xhr.responseJSON));
 
@@ -19,3 +19,5 @@ export const SessoinMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
   }
 };
+
+export default SessionMiddleware;
